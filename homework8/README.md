@@ -339,3 +339,15 @@ AP SSID: 'IAIS-NS-30015'
 ```
 > [!NOTE]
 > **password: infornationsecurity**
+
+
+
+## Contribution Table
+
+| Student ID | Works | Percentage |
+| - | - | - |
+| 314581015 | Test method 1 - E8:94:F6:A0:08:AE              | 20% |
+| 313581047 | Test method 2 - E8:94:F6:A0:08:AE              | 20% |
+| 313581038 | Test method 1 & 2 - 54:B8:0A:13:16:A6          | 20% |
+| 313581055 | Test method 1  - C4:12:F5:0A:B6:07             | 20% |
+| 412581005 | Test method 2  - C4:12:F5:0A:B6:07             | 20% |
