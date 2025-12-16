@@ -337,4 +337,5 @@ WPA PSK: 'infornationsecurity'
 AP SSID: 'IAIS-NS-30015'
 ```
 > **password: infornationsecurity**
-
+> [!NOTE] password: infornationsecurity
+> 這是補充說明的資訊。
