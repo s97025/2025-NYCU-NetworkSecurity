@@ -211,9 +211,8 @@ Hardware.Mon.#1..: Temp: 51c Util: 34%
 Started: Tue Dec  2 19:55:19 2025
 Stopped: Tue Dec  2 19:56:22 2025
 ```  
-
+> [!NOTE]
 > **password: limpbizkit**
-
     
 2. C4:12:F5:0A:B6:07 
 ```
@@ -272,8 +271,8 @@ Candidates.#1....: prometheus -> newcourt
 Hardware.Mon.#1..: Temp: 49c Util: 20%
 ....
 ```    
+> [!NOTE]
 > **password: lissabon**
-
     
 ## Methods 2 : [OneShot-Extended](https://hackmd.io/_uploads/SJCgWcCzbx.png)
 
@@ -338,7 +337,5 @@ WPS PIN: '<PBC mode›'
 WPA PSK: 'infornationsecurity'
 AP SSID: 'IAIS-NS-30015'
 ```
-> **password: infornationsecurity**
-
-> [!TIP]
+> [!NOTE]
 > **password: infornationsecurity**
