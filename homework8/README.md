@@ -25,9 +25,9 @@ sudo airmon-ng check kill
 sudo airmon-ng start <Network Interface>
 iwconfig
 ```
-> **<Network Interface>**: wlan0, wlan1
-> **<monitor interface>**: wlan1mon, wlan0mon
-> **network interface start success: (...for [phy1]wlan1 on [phy1]wlan1mon)** 
+> **<Network Interface>**: wlan0, wlan1 \
+> **<monitor interface>**: wlan1mon, wlan0mon \
+> **network interface start success: (...for [phy1]wlan1 on [phy1]wlan1mon)** \
 
 ### Step 3: Start Monitoring
 ```
