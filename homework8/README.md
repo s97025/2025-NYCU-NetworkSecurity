@@ -63,7 +63,7 @@ Session Actions Edit View Help
 ----+--------+------+------------+------------+-------------------------------
   10|12:26:38|ep+  +|b0febddb7598|c412f50ab607|IAIS-NS-30015
                    ^
-            (紅線標記處取得PMKID)
+            (標記處取得PMKID)
  3510 Packet(s) captured by kernel
  0 Packet(s) dropped by kernel
  exit on sigterm
@@ -299,9 +299,9 @@ Check if there is an ose.py file.
 sudo python ose.py -i wlan0
 sudo python ose.py  -i wlan0 --pbc
 ```
-Scan with the specified Wi-Fi adapter / attempt a WPS PIN attack.
+> Scan with the specified Wi-Fi adapter / attempt a WPS PIN attack. \
 ```--pbc```: Push Button Configuration. 
-Try connecting the AP using WPS's button pairing mode.
+> Try connecting the AP using WPS's button pairing mode.
 
 ### Results
 ```
