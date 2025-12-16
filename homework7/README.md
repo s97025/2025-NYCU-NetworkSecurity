@@ -1,27 +1,28 @@
 # Homework 7
 
 ## Table of contents
-- [USE LiveUSB](#USE-LiveUSB)
-    - [Hardare](#Hardare)
-    - [Set & Open LiveUSB](#Set-Open-LiveUSB)
+- [USE LiveUSB](#use-liveusb)
+    - [Hardare](#hardare)
+    - [Set And Open LiveUSB](#set-and-open-liveusb)
 
-- [Task1: Shadow IT](#Task1-Shadow-IT)
-    - [Step](#Step)
+- [Task1: Shadow IT](#task1-shadow-it)
+    - [Step](#step)
     - [Result](#result-task1)
 
-- [Task2: Fake AP and MITM Attack](#Task2-Fake-AP-and-MITM-Attack)
-    - [Set hostapd](#Set-hostapd)
-    - [Set DHCP](#Set-DHCP)
-    - [MITM Attack](#MITM-Attack)
+- [Task2: Fake AP and MITM Attack](#task2-fake-ap-and-mitm-attack)
+    - [Set hostapd](#set-hostapd)
+    - [Set DHCP & MiTM attack Tool](#set-dhcp)
+    - [MITM Attack](#mitm-attack)
     - [Result](#result-task2)
 
+- [Contribution Table](#contribution-table) 
 
 ## USE LiveUSB
 
 ### Hardare
 - ALFA AWUS036ACM (MediaTek MT7610U/MT7612U)
 
-### Set & Open LiveUSB
+### Set And Open LiveUSB
 - download [download kali-linux-2025.3-live-amd64.iso](https://www.kali.org/get-kali/#kali-live)
 - use [download rufus-4.11.exe](https://rufus.ie/zh_TW/) store kali-linux in USB
 - open host BIOS 
@@ -200,3 +201,13 @@ http.request.method == "POST"
 
 ### Result <a id="result-task2"></a>
 ![MITM_Attack_result](./images/MITM_Attack_result.jpg)
+
+## Contribution Table
+
+| Student ID | Works | Percentage |
+| - | - | - |
+| 314581015 | Set And Open LiveUSB            | 20% |
+| 313581047 | Set hostapd                     | 20% |
+| 313581038 | Task1: Shadow IT                | 20% |
+| 313581055 | Set DHCP & Set MiTM attack Tool | 20% |
+| 412581005 | Task1,Task2 Result              | 20% |
