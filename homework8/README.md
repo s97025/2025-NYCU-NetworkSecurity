@@ -69,13 +69,15 @@ Session Actions Edit View Help
  exit on sigterm
 ```   
 
-> **EA123P**
-> **+:** Indicates a newly received packet corresponding to one of the EA123P types. \
-> **1:** The challenge message sent from the Router/AP to the Client. \
-> **2:** The Client's response to the Router. This is the most important; it is essential. \
-> **3:** The Router's confirmation message. \
-> **P:** PMKID (No user connection required / Client-less). As long as the router has roaming features enabled, the tool can interact directly with the router to capture this packet. \
-> **Cracking Requirement: P OR 1+2**
+> [!TIP]
+> **EA123P Status Codes**
+> * **+**: Indicates a newly received packet corresponding to one of the types below.
+> * **1**: The challenge message sent from the AP to the Client.
+> * **2**: The Client's response to the AP. **(Essential / Most Important)**
+> * **3**: The AP's confirmation message.
+> * **P**: PMKID (Client-less). Captures this packet directly from the router if roaming is enabled.
+>
+> **Cracking Requirement:** `P` OR `1+2`
     
 ### Step 6: Conversion to .hc22000 (hashcat support format) 
 ```
@@ -338,6 +340,5 @@ AP SSID: 'IAIS-NS-30015'
 ```
 > **password: infornationsecurity**
 
-
-> [!NOTE]
-> 這是補充說明的資訊。
+> [!TIP]
+> **password: infornationsecurity**
