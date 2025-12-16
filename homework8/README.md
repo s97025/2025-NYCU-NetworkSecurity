@@ -69,13 +69,13 @@ Session Actions Edit View Help
  exit on sigterm
 ```   
 
->[!Note]**EA123P**
-**+:** Indicates a newly received packet corresponding to one of the EA123P types.
-**1:** The challenge message sent from the Router/AP to the Client.
-**2:** The Client's response to the Router. This is the most important; it is essential.
-**3:** The Router's confirmation message.
-**P:** PMKID (No user connection required / Client-less). As long as the router has roaming features enabled, the tool can interact directly with the router to capture this packet.
-**Cracking Requirement: P OR 1+2**
+> **EA123P**
+> **+:** Indicates a newly received packet corresponding to one of the EA123P types.
+> **1:** The challenge message sent from the Router/AP to the Client.
+> **2:** The Client's response to the Router. This is the most important; it is essential.
+> **3:** The Router's confirmation message.
+> **P:** PMKID (No user connection required / Client-less). As long as the router has roaming features enabled, the tool can interact directly with the router to capture this packet.
+> **Cracking Requirement: P OR 1+2**
     
 ### Step 6: Conversion to .hc22000 (hashcat support format) 
 ```
